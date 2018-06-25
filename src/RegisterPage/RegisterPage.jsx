@@ -46,7 +46,7 @@ class RegisterPage extends React.Component {
         this.setState({ submitted: true });
         const { user } = this.state;
         const { dispatch } = this.props;
-        if (user.firstName && user.lastName && user.username && user.password && user.email && user.phoneNo && user.address && user.city && user.postalCode && user.country && user.comments) {
+        if (user.firstName && user.lastName && user.username && user.password && user.email && user.address && user.city && user.postalCode && user.country ) {
             dispatch(userActions.register(user));
         }
     }
@@ -113,8 +113,7 @@ class RegisterPage extends React.Component {
                     </div>
                     <div className={'form-group'}>
                         <label htmlFor="comments">Comments</label>
-                        <input type="text" className="form-control" name="comments" value={user.comments} onChange={this.handleChange} />
-                        
+                        <input type="text" className="form-control" name="comments" value={user.comments} onChange={this.handleChange} />    
                     </div>
                     <div className={'form-group' + (submitted && !user.username ? ' has-error' : '')}>
                         <label htmlFor="username">Username</label>
